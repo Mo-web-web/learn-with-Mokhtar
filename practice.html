@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>جرب كود HTML بنفسك</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>جرب كود HTML بنفسك</h1>
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="tags.html">الوسوم</a>
+      <a href="practice.html" class="active">جرب بنفسك</a>
+    </nav>
+  </header>
+
+  <section class="content">
+    <h2>اكتب كودك وشاهد النتيجة مباشرة</h2>
+    <p>اكتب كود HTML في المربع أدناه ثم اضغط على زر “عرض النتيجة”</p>
+
+    <div class="editor">
+      <textarea id="code" placeholder="اكتب كود HTML هنا...">&lt;h2&gt;مرحبا بك في HTML&lt;/h2&gt;
+&lt;p&gt;ابدأ بكتابة أكوادك هنا وشاهد النتيجة أدناه&lt;/p&gt;
+</textarea>
+      <button onclick="runCode()">عرض النتيجة</button>
+    </div>
+
+    <iframe id="output"></iframe>
+  </section>
+
+  <footer>
+    <p>© 2025 موقع تعلم HTML - جميع الحقوق محفوظة</p>
+  </footer>
+
+  <script>
+    function runCode() {
+      const code = document.getElementById('code').value
+      const iframe = document.getElementById('output').contentWindow.document
+      iframe.open()
+      iframe.write(code)
+      iframe.close()
+    }
+  </script>
+
+</body>
+</html>
